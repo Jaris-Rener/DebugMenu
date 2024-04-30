@@ -1,6 +1,6 @@
 .howl-input-field {
     font-size: 36px;
-    -unity-font: url('../Fonts/WorkSans-Regular.ttf');
+    -unity-font: url('project://database/Assets/DebugMenu/Runtime/Fonts/WorkSans-Regular.ttf?fileID=12800000&guid=4eda2057ba16b0043992ae691c333090&type=3#WorkSans-Regular');
     -unity-font-definition: initial;
     margin-top: 0;
     margin-right: 0;
@@ -11,7 +11,7 @@
 }
 
 .howl-button {
-    -unity-font: url('../Fonts/WorkSans-Medium.ttf');
+    -unity-font: url('project://database/Assets/DebugMenu/Runtime/Fonts/WorkSans-Medium.ttf?fileID=12800000&guid=eb85b1ac5d470864dbd4a3082bc2741c&type=3#WorkSans-Medium');
     -unity-font-definition: initial;
     font-size: 36px;
     -unity-text-align: middle-left;
@@ -19,7 +19,8 @@
     margin-right: 0;
     margin-bottom: 0;
     margin-left: 0;
-    flex-grow: 1;
+    flex-grow: 0;
+    min-width: 256px;
 }
 
 .howl-debug-field {
@@ -45,4 +46,46 @@
     padding-bottom: 8px;
     padding-left: 8px;
     flex-direction: row;
+}
+
+.howl-menubar-button:hover {
+    background-color: rgb(49, 50, 53);
+    border-top-width: 2px;
+    border-top-color: rgb(115, 116, 119);
+    -unity-background-image-tint-color: rgb(255, 255, 255);
+}
+
+.howl-menubar-button {
+    margin-top: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+    width: 128px;
+    -unity-background-scale-mode: scale-to-fit;
+    padding-top: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+    -unity-background-image-tint-color: rgb(115, 116, 119);
+    background-color: rgba(0, 0, 0, 0);
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+    border-top-width: 0;
+    border-right-width: 0;
+    border-bottom-width: 0;
+    border-left-width: 0;
+    height: 100%;
+}
+
+.howl-menubar-button.danger {
+}
+
+.howl-menubar-button.danger:hover {
+    background-color: rgb(196, 43, 28);
+    border-right-width: 2px;
+    border-right-color: rgb(244, 91, 67);
+    border-top-width: 2px;
+    border-top-color: rgb(244, 91, 67);
 }
