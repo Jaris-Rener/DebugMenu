@@ -1,0 +1,48 @@
+.howl-input-field {
+    font-size: 36px;
+    -unity-font: url('../Fonts/WorkSans-Regular.ttf');
+    -unity-font-definition: initial;
+    margin-top: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+    flex-grow: 1;
+    flex-shrink: 1;
+}
+
+.howl-button {
+    -unity-font: url('../Fonts/WorkSans-Medium.ttf');
+    -unity-font-definition: initial;
+    font-size: 36px;
+    -unity-text-align: middle-left;
+    margin-top: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+    flex-grow: 1;
+}
+
+.howl-debug-field {
+    margin-top: 0;
+    margin-right: 0;
+    margin-bottom: 8px;
+    margin-left: 0;
+    border-top-width: 1px;
+    border-right-width: 1px;
+    border-bottom-width: 1px;
+    border-left-width: 1px;
+    border-left-color: rgb(49, 50, 53);
+    border-right-color: rgb(49, 50, 53);
+    border-top-color: rgb(49, 50, 53);
+    border-bottom-color: rgb(49, 50, 53);
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px;
+    border-bottom-left-radius: 2px;
+    background-color: rgb(27, 28, 31);
+    padding-top: 8px;
+    padding-right: 8px;
+    padding-bottom: 8px;
+    padding-left: 8px;
+    flex-direction: row;
+}

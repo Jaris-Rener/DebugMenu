@@ -1,0 +1,7 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/DebugMenu/DebugMenu.uss?fileID=7433441132597879392&amp;guid=62ab30d2af64e9041801d494d4283316&amp;type=3#DebugMenu" />
+    <ui:VisualElement class="howl-debug-field" style="flex-grow: 0; flex-direction: row;">
+        <ui:FloatField name="InputField" class="howl-input-field" style="flex-grow: 1;" />
+        <ui:Button text="Button" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Button" class="howl-button" />
+    </ui:VisualElement>
+</ui:UXML>

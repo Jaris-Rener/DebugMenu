@@ -1,0 +1,19 @@
+{
+    "name": "com.howl.debugmenu",
+    "version": "0.1.0",
+    "displayName": "Debug Menu",
+    "description": "A quick way to setup in game cheats and commands.",
+    "unity": "2022.3",
+    "unityRelease": "18f1",
+    "dependencies": {
+   },
+   "keywords": [
+      "Debug",
+      "Cheats",
+      "Tools"
+    ],
+    "author": {
+      "name": "Jaris Rener",
+      "email": "jarisrener@gmail.com"
+    }
+  }

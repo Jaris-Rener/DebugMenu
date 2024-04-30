@@ -1,0 +1,6 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/DebugMenu/DebugMenu.uss?fileID=7433441132597879392&amp;guid=62ab30d2af64e9041801d494d4283316&amp;type=3#DebugMenu" />
+    <ui:VisualElement class="howl-debug-field" style="flex-grow: 0; flex-direction: row;">
+        <ui:Slider picking-mode="Ignore" label="Slider" high-value="100" show-input-field="true" class="howl-input-field" style="color: rgb(255, 255, 255);" />
+    </ui:VisualElement>
+</ui:UXML>

@@ -1,0 +1,6 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/DebugMenu/Runtime/Styles/DebugMenu.uss?fileID=7433441132597879392&amp;guid=62ab30d2af64e9041801d494d4283316&amp;type=3#DebugMenu" />
+    <ui:VisualElement name="PageButton" style="flex-grow: 0; flex-direction: row; height: 64px; flex-shrink: 0; -unity-text-align: middle-left;">
+        <ui:Button text="Button" parse-escape-sequences="true" display-tooltip-when-elided="true" class="howl-button" style="flex-shrink: 1; flex-grow: 1; font-size: 36px;" />
+    </ui:VisualElement>
+</ui:UXML>

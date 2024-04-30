@@ -1,0 +1,18 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:VisualElement name="Background" style="background-color: rgb(18, 19, 22); position: absolute; right: 0; left: 0; top: 0; bottom: 0; border-top-left-radius: 16px; border-top-right-radius: 16px; border-bottom-right-radius: 16px; border-bottom-left-radius: 16px; border-top-width: 2px; border-right-width: 2px; border-bottom-width: 2px; border-left-width: 2px; border-left-color: rgb(49, 50, 53); border-right-color: rgb(49, 50, 53); border-top-color: rgb(49, 50, 53); border-bottom-color: rgb(49, 50, 53); overflow: hidden; width: 1500px; height: 1500px;">
+        <ui:VisualElement name="MenuBar" style="flex-grow: 0; height: 96px; background-color: rgb(27, 28, 31); border-bottom-color: rgb(49, 50, 53); border-bottom-width: 1px; flex-direction: row;">
+            <ui:VisualElement picking-mode="Ignore" style="flex-grow: 1; flex-direction: row-reverse; -unity-text-align: middle-left; align-self: center;">
+                <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="Close" style="background-color: rgba(0, 0, 0, 0); background-image: url(&apos;project://database/Assets/DebugMenu/Runtime/Sprites/icon_close.png?fileID=2800000&amp;guid=4b9adda27c6fcea4c940d00cdca88e38&amp;type=3#icon_close&apos;); -unity-background-scale-mode: scale-to-fit; width: 64px; border-top-width: 0; border-right-width: 0; border-bottom-width: 0; border-left-width: 0; height: 64px; margin-top: 16px; margin-right: 16px; margin-bottom: 16px; margin-left: 16px; -unity-background-image-tint-color: rgb(115, 116, 119);" />
+                <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="Minimise" style="background-image: url(&apos;project://database/Assets/DebugMenu/Runtime/Sprites/icon_minimise.png?fileID=2800000&amp;guid=d962d904b56b4ee42bc331b51e77623d&amp;type=3#icon_minimise&apos;); -unity-background-scale-mode: scale-to-fit; width: 64px; background-color: rgba(0, 0, 0, 0); border-top-width: 0; border-right-width: 0; border-bottom-width: 0; border-left-width: 0; height: 64px; margin-top: 16px; margin-right: 16px; margin-bottom: 16px; margin-left: 16px; -unity-background-image-tint-color: rgb(115, 116, 119);" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="Main" style="flex-grow: 1; flex-direction: row;">
+            <ui:VisualElement name="Pages" style="flex-grow: 1; width: 500px; max-width: 500px; min-width: 500px; padding-top: 8px; padding-right: 8px; padding-left: 8px;">
+                <ui:ScrollView name="PageScroll" style="padding-top: 8px; padding-right: 8px; padding-bottom: 8px; padding-left: 8px;" />
+            </ui:VisualElement>
+            <ui:VisualElement name="Content" style="flex-grow: 1; padding-top: 8px; padding-right: 8px; padding-bottom: 0; padding-left: 8px;">
+                <ui:ScrollView name="ContentArea" style="padding-top: 16px; padding-right: 16px; padding-bottom: 16px; padding-left: 16px;" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
