@@ -9,12 +9,6 @@
 
     public class DebugMenuUI : Singleton<DebugMenuUI>
     {
-        private const BindingFlags _bindingFlags = BindingFlags.Static |
-                                                            BindingFlags.Instance |
-                                                            BindingFlags.Public |
-                                                            BindingFlags.DeclaredOnly |
-                                                            BindingFlags.NonPublic;
-
         [SerializeField] private UIDocument _uiDocument;
 
         [SerializeField] private VisualTreeAsset _uiPageButton;
@@ -50,7 +44,7 @@
 
         private void Start()
         {
-            _initialiser = new DebugCommandInitialiser(_bindingFlags, _rootNode);
+            _initialiser = new DebugCommandInitialiser(_rootNode);
             _initialiser.BuildPages();
 
             RegisterWidgets();
@@ -256,7 +250,7 @@
 
             if (!string.IsNullOrEmpty(function.GetMethodName))
             {
-                var getMethod = function.Type.GetMethod(function.GetMethodName, _bindingFlags);
+                var getMethod = function.Type.GetMethod(function.GetMethodName, DebugMenuUtil.BindingFlags);
                 slider.lowValue = function.Range.x;
                 slider.highValue = function.Range.y;
                 if (getMethod != null)
@@ -284,7 +278,7 @@
 
             if (!string.IsNullOrEmpty(function.GetMethodName))
             {
-                var getMethod = function.Type.GetMethod(function.GetMethodName, _bindingFlags);
+                var getMethod = function.Type.GetMethod(function.GetMethodName, DebugMenuUtil.BindingFlags);
                 if (getMethod != null)
                     toggle.value = (bool)getMethod.Invoke(typeInstance, null); // TODO: Watch for changes outside of this control?
             }

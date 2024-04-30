@@ -1,21 +1,17 @@
 ﻿namespace DebugMenu
 {
     using System;
-    using System.Collections.Generic;
     using System.Linq;
     using System.Reflection;
-    using System.Text.RegularExpressions;
     using UnityEditor.Compilation;
     using Assembly = System.Reflection.Assembly;
 
     public class DebugCommandInitialiser
     {
-        private readonly BindingFlags _attributeBindingFlags;
         private readonly DebugPageNode _rootNode;
 
-        public DebugCommandInitialiser(BindingFlags bindingFlags, DebugPageNode rootNode)
+        public DebugCommandInitialiser(DebugPageNode rootNode)
         {
-            _attributeBindingFlags = bindingFlags;
             _rootNode = rootNode;
         }
 
@@ -32,7 +28,7 @@
 
         private void FindFunctions(Type type)
         {
-            foreach (var methodInfo in type.GetMethods(_attributeBindingFlags))
+            foreach (var methodInfo in type.GetMethods(DebugMenuUtil.BindingFlags))
             {
                 var cheatAttributes = methodInfo.GetCustomAttributes<DebugControlAttribute>();
                 foreach (var attribute in cheatAttributes)

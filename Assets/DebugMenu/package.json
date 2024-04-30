@@ -1,6 +1,6 @@
 {
     "name": "com.howl.debugmenu",
-    "version": "0.1.0",
+    "version": "0.1.3",
     "displayName": "Debug Menu",
     "description": "A quick way to setup in game cheats and commands.",
     "unity": "2022.3",

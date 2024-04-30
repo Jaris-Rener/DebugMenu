@@ -13,7 +13,7 @@
 
         public override IEnumerable<DebugFunction> GenerateFunctions(Type type, MethodInfo method)
         {
-            var getMethod = type.GetMethod(GetMethodName);
+            var getMethod = type.GetMethod(GetMethodName, DebugMenuUtil.BindingFlags);
             if (getMethod != null)
             {
                 var items = (IEnumerable)getMethod?.Invoke(null, null); // TODO: Support non-static collections
