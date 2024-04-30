@@ -19,7 +19,7 @@
     margin-right: 0;
     margin-bottom: 0;
     margin-left: 0;
-    flex-grow: 0;
+    flex-grow: 1;
     min-width: 256px;
 }
 

@@ -1,11 +1,41 @@
 namespace Testing
 {
+    using System.Collections.Generic;
     using DebugMenu;
     using UnityEditor;
     using UnityEngine;
 
+    public class TestItem
+    {
+        public TestItem(string name)
+        {
+            Name = name;
+        }
+
+        public string Name;
+
+        public override string ToString() => Name;
+    }
+
     public static class TestScript
     {
+        public static readonly List<TestItem> Items = new()
+        {
+            new("Apple"),
+            new("Orange"),
+            new("Banana"),
+            new("Peach"),
+            new("Mango"),
+        };
+
+        [DebugButtonCollection(nameof(EnumerateItems), Name = "Alpha/Print Item Name")]
+        public static void PrintItemName(TestItem item)
+        {
+            Debug.Log(item.Name);
+        }
+
+        public static IEnumerable<TestItem> EnumerateItems() => Items;
+
         [DebugButton(Name = "Alpha/Beta/Print")]
         public static void Print()
         {

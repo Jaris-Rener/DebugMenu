@@ -94,6 +94,7 @@
             foreach (var child in node.Children)
                 AddPageButton(child);
 
+            // TODO: Separate view & logic into different scripts
             // Add the functions for this node into the main content area
             SetupNodeFunctions(node);
         }
@@ -185,12 +186,15 @@
             var parameters = function.Method.GetParameters();
             Func<object[]> getParams = null;
 
+            // If we don't have objects for our parameters, we might need an input of some kind
+            var unresolvedParams = parameters.Length - function.Parameters.Length;
+
             // TODO: Improve how we select field types
-            if (parameters.Length == 0)
+            if (unresolvedParams == 0)
             {
                 instance = _uiButtonTemplate.Instantiate();
             }
-            else if (parameters.Length == 1)
+            else if (unresolvedParams == 1)
             {
                 var parameterType = parameters[0].ParameterType;
                 var (_, template) = _widgets.FirstOrDefault(x => x.Key.IsAssignableFrom(parameterType));
@@ -231,7 +235,8 @@
                 return;
 
             button.text = function.FuncName;
-            button.clicked += () => RunCommand(function, typeInstance, getParams?.Invoke());
+            var runParams = (getParams?.Invoke() ?? Array.Empty<object>()).Concat(function.Parameters);
+            button.clicked += () => RunCommand(function, typeInstance, runParams.ToArray());
         }
 
         private void SetupSlider(DebugSlider function)

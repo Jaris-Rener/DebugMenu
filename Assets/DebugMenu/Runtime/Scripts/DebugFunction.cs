@@ -36,9 +36,12 @@
 
     public class DebugButton : DebugFunction
     {
-        public DebugButton(string name, Type type, MethodInfo method, string getMethodName)
+        public readonly object[] Parameters;
+
+        public DebugButton(string name, Type type, MethodInfo method, string getMethodName, params object[] parameters)
             : base(name, type, method, getMethodName)
         {
+            Parameters = parameters;
         }
     }
 

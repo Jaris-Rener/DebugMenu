@@ -37,22 +37,20 @@
                 var cheatAttributes = methodInfo.GetCustomAttributes<DebugControlAttribute>();
                 foreach (var attribute in cheatAttributes)
                 {
-                    RegisterFunction(type, methodInfo, attribute);
+                    GenerateFunctions(type, methodInfo, attribute);
                 }
             }
         }
 
-        private void RegisterFunction(Type type, MethodInfo methodInfo, DebugControlAttribute attribute)
+        private void GenerateFunctions(Type type, MethodInfo methodInfo, DebugControlAttribute attribute)
         {
-            var name = attribute.Name ?? ToDisplayName(methodInfo.Name);
-            DebugFunction function = attribute switch
-            {
-                DebugButtonAttribute btnAttr => new DebugButton(name, type, methodInfo, btnAttr.GetMethodName),
-                DebugToggleAttribute tglAttr => new DebugToggle(name, type, methodInfo, tglAttr.GetMethodName),
-                DebugSliderAttribute sldAttr => new DebugSlider(name, type, methodInfo, sldAttr.GetMethodName, sldAttr.Range),
-                _ => throw new ArgumentOutOfRangeException(nameof(attribute), attribute, null)
-            };
+            // Iterate all the functions this attribute creates and register them to the appropriate page(s).
+            foreach (var function in attribute.GenerateFunctions(type, methodInfo))
+                RegisterFunction(function);
+        }
 
+        private void RegisterFunction(DebugFunction function)
+        {
             var splitFunctionName = function.Path.Split("/");
 
             // Iterate over all but the last section of the path (e.g. One/Two)
@@ -65,8 +63,5 @@
 
             currentNode.Data.RegisterFunction(function);
         }
-
-        private static string ToDisplayName(string str)
-            => Regex.Replace(str, "(?<!^)([A-Z][a-z]|(?<=[a-z])[A-Z])", " $1", RegexOptions.Compiled).Trim();
     }
 }
